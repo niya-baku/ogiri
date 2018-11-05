@@ -20,4 +20,21 @@ class OdaisController < ApplicationController
     @odai.save
     redirect_to("/")
   end
+
+  def edit
+    @odai = Odai.find_by(id: params[:id])
+  end
+
+  def update
+    @odai = Odai.find_by(id: params[:id])
+    @odai.content = params[:content]
+    @odai.save
+    redirect_to("/")
+  end
+
+  def destroy
+      @odai = Odai.find_by(id: params[:id])
+      @odai.destroy
+      redirect_to("/")
+  end
 end
