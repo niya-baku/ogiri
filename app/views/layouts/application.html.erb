@@ -10,6 +10,19 @@
   </head>
 
   <body>
+    <header>
+  <div class="header-logo">
+    <%= link_to("マルチ大喜利", "/") %>
+  </div>
+  <ul class="header-menus">
+    <li>
+      <%= link_to("お題回答一覧", "/") %>
+    </li>
+    <li>
+      <%= link_to("お題投稿", "/odais/new") %>
+    </li>
+  </ul>
+</header>
     <%= yield %>
   </body>
 </html>

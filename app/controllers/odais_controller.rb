@@ -7,4 +7,17 @@ class OdaisController < ApplicationController
 
   def authentication
   end
+
+  def show
+    @odai = Odai.find_by(id: params[:id])
+  end
+
+  def new
+  end
+
+  def create
+    @odai = Odai.new(content: params[:content])
+    @odai.save
+    redirect_to("/")
+  end
 end

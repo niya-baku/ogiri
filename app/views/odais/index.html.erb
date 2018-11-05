@@ -1,2 +1,9 @@
-<h1>Odais#index</h1>
-<p>Find me in app/views/odais/index.html.erb</p>
+<div class="main posts-index">
+  <div class="container">
+    <% @odais.each do |odai| %>
+      <div class="posts-index-item">
+        <%= link_to(odai.content, "/odais/#{odai.id}") %>
+      </div>
+    <% end %>
+  </div>
+</div>
