@@ -21,8 +21,12 @@
     <li>
       <%= link_to("お題投稿", "/odais/new") %>
     </li>
+    <li>
+      <%= link_to("新規登録", "/users/sign_up") %>
+    </li>
   </ul>
 </header>
+    
     <% if flash[:notice] %>
       <div class="flash">
         <%= flash[:notice] %>
