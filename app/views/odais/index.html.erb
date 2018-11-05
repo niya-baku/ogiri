@@ -1,7 +1,7 @@
-<div class="main posts-index">
+<div class="main odais-index">
   <div class="container">
     <% @odais.each do |odai| %>
-      <div class="posts-index-item">
+      <div class="odais-index-item">
         <%= link_to(odai.content, "/odais/#{odai.id}") %>
         <!--<%# <%= link_to image_tag(odai.image_url(:thumb)), "/odais/#{odai.id}" %> %>-->
         <%= image_tag odai.image_url(:thumb) %>
