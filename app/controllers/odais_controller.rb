@@ -13,12 +13,17 @@ class OdaisController < ApplicationController
   end
 
   def new
+    @odai = Odai.new
   end
 
   def create
     @odai = Odai.new(content: params[:content])
-    @odai.save
-    redirect_to("/")
+    if @odai.save
+      flash[:notice] = "お題を投稿しました！！"
+      redirect_to("/")
+    else
+      render("odais/new")
+    end
   end
 
   def edit
@@ -28,13 +33,18 @@ class OdaisController < ApplicationController
   def update
     @odai = Odai.find_by(id: params[:id])
     @odai.content = params[:content]
-    @odai.save
-    redirect_to("/")
+    if @odai.save
+      flash[:notice] = "お題を編集しました！"
+      redirect_to("/")
+    else
+    render("odais/edit")
+    end
   end
 
   def destroy
       @odai = Odai.find_by(id: params[:id])
       @odai.destroy
+      flash[:notice] = "お題を削除しました。"
       redirect_to("/")
   end
 end
