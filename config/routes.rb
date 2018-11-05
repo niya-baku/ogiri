@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'odais/:id' => 'odais#show'
 
   post "odais/create" => "odais#create"
+  
 
   #投稿に対しての編集と削除
   get "odais/:id/edit" => "odais#edit"
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
   post "odais/:id/destroy" => "odais#destroy"
 
   devise_for :users
-  
+
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
