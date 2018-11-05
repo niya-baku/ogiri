@@ -52,7 +52,7 @@ body {
   width: 100%;
   height: auto;
   min-height: 100%;
-  background-color: #f5f8fa;
+  background-color: #f0f0f0;
 }
 
 .container {
@@ -209,10 +209,11 @@ header {
   clear: both;
 }
 
-/* posts/index ================================ */
+/* odais/index ================================ */
 .odais-index-item {
-  background-color: #f0f0f0;
-  max-width: 600px;
+  background-color: #f5f8fa;
+  max-width: 700px;
+  height: 400px;
     margin: 60px auto;
     padding-left: 15px;
     padding-right: 15px;
@@ -246,6 +247,19 @@ header {
   width: 90%;
   padding-left: 25px;
   text-align: left;
+}
+
+.image{
+  text-align:center;
+  padding-top: 30px;
+}
+
+#content-text{
+  font-size: 30px;
+}
+
+.content{
+  text-align:center;
 }
 
 /* posts/show ================================ */

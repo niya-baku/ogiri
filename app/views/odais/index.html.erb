@@ -2,9 +2,9 @@
   <div class="container">
     <% @odais.each do |odai| %>
       <div class="odais-index-item">
-        <%= link_to(odai.content, "/odais/#{odai.id}") %>
         <!--<%# <%= link_to image_tag(odai.image_url(:thumb)), "/odais/#{odai.id}" %> %>-->
-        <%= image_tag odai.image_url(:thumb) %>
+        <div class="image"><%= image_tag odai.image_url(:thumb) %></div>
+        <div class="content"><%= link_to(odai.content, "/odais/#{odai.id}", id: "content-text")%></div>
       </div>
     <% end %>
   </div>
