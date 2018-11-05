@@ -19,16 +19,16 @@ class OdaisController < ApplicationController
 
   def create
     @odai = Odai.new(odai_params)
-
-    respond_to do |format|
-      if @odai.save
-        format.html { redirect_to :/, notice: '画像を投稿しました！' }
-        format.json { render :show, status: :created, location: @odai }
-      else
-        format.html { render :new }
-        format.json { render json: @odai.errors, status: :unprocessable_entity }
-      end
-    end
+    #@odai = Odai.new(content: params[:content])
+     respond_to do |format|
+       if @odai.save
+         format.html { redirect_to :action => "index" }
+         format.json { render :show, status: :created, location: @odai }
+       else
+         format.html { render :new }
+         format.json { render json: @odai.errors, status: :unprocessable_entity }
+       end
+     end
 
     # if @odai.save
     #   flash[:notice] = "お題を投稿しました！！"
@@ -60,14 +60,14 @@ class OdaisController < ApplicationController
       redirect_to("/")
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_odai
-      @odai = Odai.find(params[:id])
-    end
+   private
+     # Use callbacks to share common setup or constraints between actions.
+     def set_odai
+       @odai = Odai.find(params[:id])
+     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def odai_params
-      params.require(:odai).permit(:content, :image)
-    end
+  #   # Never trust parameters from the scary internet, only allow the white list through.
+     def odai_params
+       params.require(:odai).permit(:content, :image)
+     end
 end

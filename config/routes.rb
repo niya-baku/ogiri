@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   get 'odais/new' => 'odais/new'
   get 'odais/:id' => 'odais#show'
 
-  post "odais/create" => "odais#create"
-  
+  post "odais/new" => "odais#create"
+
 
   #投稿に対しての編集と削除
   get "odais/:id/edit" => "odais#edit"
