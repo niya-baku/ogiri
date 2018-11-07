@@ -15,6 +15,12 @@ Rails.application.routes.draw do
   post "odais/:id/destroy" => "odais#destroy"
   post "odais/:id/bokes/create" => "bokes#create"
 
+  #お題に対しての回答
+  get "bokes/index" => "bokes/index"
+  get "bokes/:id" => "bokes#show"
+  post "bokes/:id/destroy" => "bokes#destroy"
+
+
   devise_for :users, path_names: { sign_in: "login", sign_out: "logout"}
    # get  'users/signup' => 'users#sign_up'
    # get 'users/sign_in' =>　'users#sign_in'

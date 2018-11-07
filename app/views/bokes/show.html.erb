@@ -1,0 +1,22 @@
+<div class="main posts-show">
+  <div class="container">
+    <div class="posts-show-item">
+      <div class="post-user-name">
+
+      </div>
+      <div class="image">
+        
+      </div>
+      <p>
+        <%= @boke.content %>
+      </p>
+      <div class="post-time">
+        <%= @boke.created_at %>
+      </div>
+      <div class="post-menus">
+
+        <%= link_to("削除", "/bokes/#{@boke.id}/destroy",{method: "post"}) %>
+      </div>
+    </div>
+  </div>
+</div>

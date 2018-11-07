@@ -12,7 +12,7 @@ class OdaisController < ApplicationController
   def show
     @odai = Odai.find_by(id: params[:id])
     @boke = Boke.new
-    @user = User.find_by(id: @odai.user_id)
+    @user = @odai.user
   end
 
   def new
