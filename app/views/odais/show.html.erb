@@ -1,12 +1,48 @@
 <div class="main posts-show">
   <div class="container">
     <div class="posts-show-item">
+      <div class="image"><%= image_tag @odai.image_url(:thumb) %></div>
       <p>
         <%= @odai.content %>
       </p>
       <div class="post-time">
         <%= @odai.created_at %>
       </div>
+      <h1 class="form-heading">投稿する</h1>
+      <%= form_for @boke, url: "/odais/#{@odai.id}/bokes/create" do |f| %>
+      <div class="form">
+        <div class="form-body">
+          <% @odai.errors.full_messages.each do |message| %>
+              <div class="form-error">
+                <%= message %>
+              </div>
+            <% end %>
+
+
+                <div class="field">
+                  <%= f.label :image %>
+                  <%= f.file_field :image, id: :post_image %>
+                  <%= f.hidden_field :image_cache %>
+                </div>
+
+                <div id="preview">
+                </div>
+
+
+                <div class="field">
+                  <%= f.label :content %>
+                  <%= f.text_area :content %>
+                </div>
+
+                <div class="actions">
+                  <%= f.submit %>
+                </div>
+
+
+
+        </div>
+      </div>
+      <% end %>
       <div class="post-menus">
         <%= link_to("編集", "/odais/#{@odai.id}/edit") %>
         <%= link_to("削除", "/odais/#{@odai.id}/destroy",{method: "post"}) %>

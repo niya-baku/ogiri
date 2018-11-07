@@ -262,6 +262,22 @@ header {
   text-align:center;
 }
 
+.btn{
+  background-color: #3ecdc6;
+
+  cursor: pointer;
+  font-weight: 300;
+  width: 120px;
+  border-radius: 2px;
+  margin-top: 8px;
+  margin-bottom: 0;
+  float: right;
+}
+
+#btn-text{
+  color: white;
+}
+
 /* posts/show ================================ */
 .posts-show form {
   display: inline;

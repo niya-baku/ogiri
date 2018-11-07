@@ -15,21 +15,32 @@
     <%= link_to("マルチ大喜利", "/") %>
   </div>
   <ul class="header-menus">
+    <% if user_signed_in? %>
     <li>
-      <%= link_to("お題回答一覧", "/") %>
+      <%= link_to("#{current_user.username}", "users/#{current_user.id}") %>
+    </li>
+    <% end %>
+    <li>
+      <%= link_to("お題一覧", "/") %>
     </li>
     <li>
       <%= link_to("お題投稿", "/odais/new") %>
     </li>
     <li>
+      <%= link_to("ユーザー一覧", "/users") %>
+    </li>
+    <% if user_signed_in? %>
+    <li>
+      <%= link_to("ログアウト", "/users/logout") %>
+    </li>
+    <% else %>
+    <li>
       <%= link_to("新規登録", "/users/sign_up") %>
     </li>
     <li>
-      <%= link_to("ログイン", "/users/sign_in") %>
+      <%= link_to("ログイン", "/users/login") %>
     </li>
-    <li>
-      <%= link_to("ログアウト", "/users/sign_out") %>
-    </li>
+    <% end %>
   </ul>
 </header>
 

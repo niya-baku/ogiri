@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # passwordのバリデーション
-  
+
+
   # usernameのバリデーション
   validates :username,
     uniqueness: { case_sensitive: :false },

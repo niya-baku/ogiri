@@ -1,6 +1,6 @@
 class OdaisController < ApplicationController
   # ユーザがログインしていないと"show"にアクセスできない
-  #before_action :authenticate_user!	, only: :show
+  before_action :authenticate_user!	, only: :edit
 
   def index
     @odais = Odai.all.order(created_at: :desc) #投稿時に降順に表示される
@@ -11,6 +11,7 @@ class OdaisController < ApplicationController
 
   def show
     @odai = Odai.find_by(id: params[:id])
+    @boke = Boke.new
   end
 
   def new
@@ -68,6 +69,6 @@ class OdaisController < ApplicationController
 
   #   # Never trust parameters from the scary internet, only allow the white list through.
      def odai_params
-       params.require(:odai).permit(:content, :image)
+       params.require(:odai).permit(:content, :image, user_id: current_user.id)
      end
 end
