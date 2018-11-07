@@ -17,7 +17,8 @@
   <ul class="header-menus">
     <% if user_signed_in? %>
     <li>
-      <%= link_to("#{current_user.username}", "users/#{current_user.id}") %>
+      <%= link_to("#{current_user.username}の部屋", "/users/#{current_user.id}") %>
+      
     </li>
     <% end %>
     <li>

@@ -1,14 +1,20 @@
 <div class="main posts-show">
   <div class="container">
     <div class="posts-show-item">
-      <div class="image"><%= image_tag @odai.image_url(:thumb) %></div>
+      <div class="post-user-name">
+        <%= link_to("#{@user.username}さんの投稿","/users/#{@user.id}")%>
+
+      </div>
+      <div class="image">
+        <%= image_tag @odai.image_url(:thumb) %>
+      </div>
       <p>
         <%= @odai.content %>
       </p>
       <div class="post-time">
         <%= @odai.created_at %>
       </div>
-      <h1 class="form-heading">投稿する</h1>
+      <h1 class="form-heading">ボケを回答する</h1>
       <%= form_for @boke, url: "/odais/#{@odai.id}/bokes/create" do |f| %>
       <div class="form">
         <div class="form-body">
@@ -17,7 +23,6 @@
                 <%= message %>
               </div>
             <% end %>
-
 
                 <div class="field">
                   <%= f.label :image %>
@@ -28,7 +33,6 @@
                 <div id="preview">
                 </div>
 
-
                 <div class="field">
                   <%= f.label :content %>
                   <%= f.text_area :content %>
@@ -37,8 +41,6 @@
                 <div class="actions">
                   <%= f.submit %>
                 </div>
-
-
 
         </div>
       </div>

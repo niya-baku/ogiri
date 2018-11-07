@@ -12,6 +12,7 @@ class OdaisController < ApplicationController
   def show
     @odai = Odai.find_by(id: params[:id])
     @boke = Boke.new
+    @user = User.find_by(id: @odai.user_id)
   end
 
   def new
@@ -69,6 +70,6 @@ class OdaisController < ApplicationController
 
   #   # Never trust parameters from the scary internet, only allow the white list through.
      def odai_params
-       params.require(:odai).permit(:content, :image, user_id: current_user.id)
+       params.require(:odai).permit(:content, :image).merge(user_id: current_user.id)
      end
 end
