@@ -1,11 +1,10 @@
 class BokesController < ApplicationController
   # ユーザがログインしていない時にアクセスできない
-  before_action :authenticate_user , {only: [:new,:show,:create,:edit,:destroy]}
+  before_action :authenticate_user! , {only: [:new,:show,:create,:edit,:destroy]}
 
   def index
     @bokes = Boke.all.order(created_at: :desc) #投稿時に降順に表示される
     @odais = Odai.all.order(created_at: :desc)
-
   end
 
   def show
@@ -36,7 +35,7 @@ class BokesController < ApplicationController
       @boke = Boke.find_by(id: params[:id])
       @boke.destroy
       flash[:notice] = "お題を削除しました。"
-      redirect_to("/bokes/index")
+      redirect_to("/")
   end
   private
 

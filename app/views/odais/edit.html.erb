@@ -1,7 +1,8 @@
 <div class="main posts-new">
   <div class="container">
     <h1 class="form-heading">編集する</h1>
-    <%= form_tag("/odais/#{@odai.id}/update") do %>
+    <%# <%= form_tag("/odais/#{@odai.id}/update") do %> %>
+    <%= form_for @odai, :url => {:action => 'update'} do |f| %>
     <div class="form">
       <div class="form-body">
         <% @odai.errors.full_messages.each do |message| %>
@@ -9,8 +10,26 @@
               <%= message %>
             </div>
           <% end %>
-        <textarea name= "content"><%= @odai.content %></textarea>
-        <input type="submit" value="保存">
+
+          <div class="field">
+            <%= f.label :image %>
+            <%= f.file_field :image, id: :post_image %>
+            <%= f.hidden_field :image_cache %>
+          </div>
+
+          <div id="preview">
+          </div>
+
+
+          <div class="field">
+            <%= f.label :content %>
+            <%= f.text_area :content %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit %>
+          </div>
+
       </div>
     </div>
     <% end %>

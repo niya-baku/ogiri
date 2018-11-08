@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   #投稿に対しての編集と削除
   get "odais/:id/edit" => "odais#edit"
   post "odais/:id/update" => "odais#update"
+
   post "odais/:id/destroy" => "odais#destroy"
   post "odais/:id/bokes/create" => "bokes#create"
 

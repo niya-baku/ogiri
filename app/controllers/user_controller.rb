@@ -3,7 +3,7 @@ class UserController < ApplicationController
   before_action :forbid_login_user, {only: [:new, :create]}
 
   # ユーザがログインしていない時にアクセスできない
-  before_action :authenticate_user	, {only: [:show,:edit,:update]}
+  before_action :authenticate_user!	, {only: [:show,:edit,:update]}
 
   def index
     @users = User.all
