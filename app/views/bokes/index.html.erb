@@ -1,15 +1,20 @@
 <div class="main odais-index">
   <div class="container">
     <% @bokes.each do |boke| %>
-      <div class="odais-index-item">
+      <div class="bokes-index-item">
+        <% @odais.each do |odai| %>
+          <% if boke.odai_id == odai.id %>
+            <div class="content"><%= odai.content %></div>
+            <div class="image"><%= image_tag odai.image_url(:thumb) %></div>
+          <% else %>
+          <% end %>
+        <% end %>
         <!--<%# <%= link_to image_tag(odai.image_url(:thumb)), "/odais/#{odai.id}" %> %>-->
         <div class="image"><%= image_tag boke.image_url(:thumb) %></div>
 
         <div class="content"><%= link_to(boke.content, "/bokes/#{boke.id}", id: "content-text")%></div>
-        <div class="content"><%= boke.odai_id%></div>
-        <!-- <a id="content-text" href="/odais/8"></a>
-        <img src="/uploads/odai/image/9/thumb_neko7.jpg"> -->
-        <%= "/uploads/odai/image/9/thumb_neko7.jpg" %>
+
+
       </div>
     <% end %>
   </div>

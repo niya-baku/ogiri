@@ -5,7 +5,7 @@
 
       </div>
       <div class="image">
-        
+
       </div>
       <p>
         <%= @boke.content %>
@@ -14,6 +14,7 @@
         <%= @boke.created_at %>
       </div>
       <div class="post-menus">
+        
 
         <%= link_to("削除", "/bokes/#{@boke.id}/destroy",{method: "post"}) %>
       </div>

@@ -1,3 +1,13 @@
 // Place all the styles related to the Bokes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.bokes-index-item{
+    background-color: #f5f8fa;
+    max-width: 700px;
+    height: 700px;
+      margin: 60px auto;
+      padding-left: 15px;
+      padding-right: 15px;
+      clear: both;
+    box-shadow: 0 2px 6px #c1ced7;
+}
