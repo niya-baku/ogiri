@@ -2,7 +2,7 @@ class BokesController < ApplicationController
 
   def index
     @bokes = Boke.all.order(created_at: :desc) #投稿時に降順に表示される
-    @odais = Odai.all.order(created_at: :desc)
+    @odai = Odai.find_by(id: params[:id])
   end
 
   def show
@@ -39,6 +39,6 @@ class BokesController < ApplicationController
 
  #   # Never trust parameters from the scary internet, only allow the white list through.
     def boke_params
-      params.require(:boke).permit(:content, :image).merge(user_id: current_user.id)
+      params.require(:boke).permit(:content, :image, :odai_id).merge(user_id: current_user.id)
     end
 end

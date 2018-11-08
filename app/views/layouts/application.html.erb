@@ -19,15 +19,15 @@
     <li>
       <%= link_to("#{current_user.username}の部屋", "/users/#{current_user.id}") %>
     </li>
-    <% end %>
     <li>
-      <%= link_to("お題一覧", "/") %>
+      <%= link_to("ユーザー一覧", "/users") %>
     </li>
     <li>
       <%= link_to("お題投稿", "/odais/new") %>
     </li>
+    <% end %>
     <li>
-      <%= link_to("ユーザー一覧", "/users") %>
+      <%= link_to("お題一覧", "/") %>
     </li>
     <li>
       <%= link_to("ボケ回答一覧", "/bokes/index") %>
