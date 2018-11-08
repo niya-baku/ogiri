@@ -1,6 +1,8 @@
 class OdaisController < ApplicationController
-  # ユーザがログインしていないと"show"にアクセスできない
-  before_action :authenticate_user!	, only: :edit
+  # ユーザがログインしていない時にアクセスできない
+  before_action :authenticate_user	, {only: [:index,:show,:new,:create,:edit,:update,:destroy]}
+
+
 
   def index
     @odais = Odai.all.order(created_at: :desc) #投稿時に降順に表示される

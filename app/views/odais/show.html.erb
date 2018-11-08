@@ -3,7 +3,6 @@
     <div class="posts-show-item">
       <div class="post-user-name">
         <%= link_to("#{@user.username}さんの投稿","/users/#{@user.id}")%>
-        <%= @user.id %>
       </div>
       <div class="image">
         <%= image_tag @odai.image_url(:thumb) %>
@@ -47,10 +46,13 @@
         </div>
       </div>
       <% end %>
+      <% if @user.id == current_user.id %>
       <div class="post-menus">
         <%= link_to("編集", "/odais/#{@odai.id}/edit") %>
         <%= link_to("削除", "/odais/#{@odai.id}/destroy",{method: "post"}) %>
       </div>
+      <% end %>
+
     </div>
   </div>
 </div>

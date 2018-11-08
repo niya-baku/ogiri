@@ -4,12 +4,18 @@
       <div class="bokes-index-item">
         <% @odais.each do |odai| %>
           <% if boke.odai_id == odai.id %>
+            <div class="post-user-name">
+              <%= link_to("#{odai.user.username}さんからのお題", "/users/#{odai.user.id}") %>
+            </div>
             <div class="content"><%= odai.content %></div>
             <div class="image"><%= image_tag odai.image_url(:thumb) %></div>
           <% else %>
           <% end %>
         <% end %>
-        <!--<%# <%= link_to image_tag(odai.image_url(:thumb)), "/odais/#{odai.id}" %> %>-->
+        <div class="post-user-name">
+          <%= link_to("#{boke.user.username}さんの回答", "/users/#{boke.user.id}") %>
+        </div>
+
         <div class="image"><%= image_tag boke.image_url(:thumb) %></div>
 
         <div class="content"><%= link_to(boke.content, "/bokes/#{boke.id}", id: "content-text")%></div>

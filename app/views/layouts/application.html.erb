@@ -25,12 +25,12 @@
     <li>
       <%= link_to("お題投稿", "/odais/new") %>
     </li>
+    <li>
+      <%= link_to("お題一覧", "/odais/index") %>
+    </li>
     <% end %>
     <li>
-      <%= link_to("お題一覧", "/") %>
-    </li>
-    <li>
-      <%= link_to("ボケ回答一覧", "/bokes/index") %>
+      <%= link_to("ボケ回答一覧", "/") %>
     </li>
     <% if user_signed_in? %>
     <li>

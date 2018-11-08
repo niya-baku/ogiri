@@ -2,8 +2,10 @@
   <div class="container">
     <div class="user">
       <h2><%= @user.username %></h2>
+      <% if @user.id == current_user.id %>
       <p><%= @user.email %></p>
       <%= link_to("アカウント編集", "/users/edit") %>
+      <% end %>
     </div>
   </div>
 </div>

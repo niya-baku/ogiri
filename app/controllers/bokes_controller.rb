@@ -1,4 +1,6 @@
 class BokesController < ApplicationController
+  # ユーザがログインしていない時にアクセスできない
+  before_action :authenticate_user , {only: [:new,:show,:create,:edit,:destroy]}
 
   def index
     @bokes = Boke.all.order(created_at: :desc) #投稿時に降順に表示される
@@ -8,8 +10,7 @@ class BokesController < ApplicationController
 
   def show
     @boke = Boke.find_by(id: params[:id])
-    @odai = @boke.odai
-    @user = @boke.user
+
 
   end
 
