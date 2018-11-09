@@ -2,11 +2,12 @@
   <div class="container">
     <div class="posts-show-item">
       <div class="post-user-name">
-
       </div>
+      <% if @boke.image? %>
       <div class="image">
-        <div class="image"><%= image_tag @boke.image_url(:thumb) %></div>
+        <%= image_tag @boke.image_url(:thumb) %>
       </div>
+      <% end %>
       <p>
         <%= @boke.content %>
       </p>

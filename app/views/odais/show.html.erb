@@ -5,8 +5,9 @@
         <%= link_to("#{@user.username}さんの投稿","/users/#{@user.id}")%>
       </div>
       <div class="image">
+        <% if @odai.image? %>
         <%= image_tag @odai.image_url(:thumb) %>
-
+        <% end %>
       </div>
       <p>
         <%= @odai.content %>
