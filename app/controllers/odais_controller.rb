@@ -23,6 +23,8 @@ class OdaisController < ApplicationController
 
   def create
     @odai = Odai.new(odai_params)
+    test_x = params[:content]
+    puts test_x
     #@odai = Odai.new(content: params[:content])
      respond_to do |format|
        if @odai.save
@@ -48,11 +50,10 @@ class OdaisController < ApplicationController
 
   def update
     @odai = Odai.find_by(id: params[:id])
-    #@odai.image = params[:image]
     @odai.content = params[:content]
     if @odai.save
       flash[:notice] = "お題を編集しました！"
-      redirect_to("odais/index")
+      redirect_to("/odais/index")
     else
     render("odais/edit")
     end
@@ -62,7 +63,7 @@ class OdaisController < ApplicationController
       @odai = Odai.find_by(id: params[:id])
       @odai.destroy
       flash[:notice] = "お題を削除しました。"
-      redirect_to("odais/index")
+      redirect_to("/odais/index")
   end
 
    private

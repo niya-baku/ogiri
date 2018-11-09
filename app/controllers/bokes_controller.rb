@@ -31,6 +31,17 @@ class BokesController < ApplicationController
     @boke = Boke.find_by(id: params[:id])
   end
 
+  def update
+    @boke = Boke.find_by(id: params[:id])
+    @boke.content = params[:content]
+    if @boke.save
+      flash[:notice] = "お題を編集しました！"
+      redirect_to("/")
+    else
+    render("bokes/edit")
+    end
+  end
+
   def destroy
       @boke = Boke.find_by(id: params[:id])
       @boke.destroy

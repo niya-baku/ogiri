@@ -2,23 +2,26 @@ Rails.application.routes.draw do
   #お題に対しての回答
   get "/" => "bokes#index"
   get "bokes/:id" => "bokes#show"
+  get "bokes/:id/edit" => "bokes#edit"
+  post "bokes/:id/update" => "bokes#update"
   post "bokes/:id/destroy" => "bokes#destroy"
 
+  #投稿に対しての編集と削除
   get 'odais/index' => "odais#index"
   get 'odais/new' => 'odais/new'
   get 'odais/:id' => 'odais#show'
   post "odais/new" => "odais#create"
 
+  get "odais/:id/edit" => "odais#edit"
+  post "odais/:id/update" => "odais#update"
+  post "odais/:id/destroy" => "odais#destroy"
+  post "odais/:id/bokes/create" => "bokes#create"
+
   get 'users' => 'user#index' #ユーザー一覧
   get "users/:id/edit" => "users#edit"
   post "users/create" => "users#create"
 
-  #投稿に対しての編集と削除
-  get "odais/:id/edit" => "odais#edit"
-  post "odais/:id/update" => "odais#update"
 
-  post "odais/:id/destroy" => "odais#destroy"
-  post "odais/:id/bokes/create" => "bokes#create"
 
 
 

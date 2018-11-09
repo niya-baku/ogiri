@@ -5,7 +5,7 @@
 
       </div>
       <div class="image">
-
+        <div class="image"><%= image_tag @boke.image_url(:thumb) %></div>
       </div>
       <p>
         <%= @boke.content %>
@@ -15,7 +15,7 @@
       </div>
       <div class="post-menus">
 
-
+        <%= link_to("編集", "/bokes/#{@boke.id}/edit") %>
         <%= link_to("削除", "/bokes/#{@boke.id}/destroy",{method: "post"}) %>
 
       </div>

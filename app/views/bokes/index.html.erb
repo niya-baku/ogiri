@@ -10,6 +10,7 @@
             <div class="content"><%= odai.content %></div>
             <div class="image"><%= image_tag odai.image_url(:thumb) %></div>
           <% else %>
+          <p>この投稿はユーザーが存在しないか、投稿者が削除した可能性があります</p>
           <% end %>
         <% end %>
         <div class="post-user-name">
