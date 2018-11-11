@@ -2,9 +2,9 @@
   <div class="container">
     <div class="user">
       <h2><%= @user.username %></h2>
-      <% if @user.id == @current_user.id %>
+      <% if @user.id == current_user.id %>
       <p><%= @user.email %></p>
-        <%= link_to("編集", "/users/#{@user.id}/edit") %>
+        <%= link_to("アカウント編集", "/users/edit") %>
       <% end %>
     </div>
 
@@ -15,7 +15,6 @@
 
     <% @likes.each do |like| %>
       <% boke = Boke.find_by(id: like.boke_id) %>
-
       <div class="posts-index-item">
         <div class="post-left">
 
@@ -24,7 +23,10 @@
           <div class="post-user-name">
             <%= link_to(boke.user.username, "/users/#{boke.user.id}") %>
           </div>
-          <%= link_to(boke.content, "/posts/#{boke.id}") %>
+          <% if boke.image? %>
+          <div class="image"><%= image_tag boke.image_url(:thumb) %></div>
+          <% end %>
+          <%= link_to(boke.content, "/bokes/#{boke.id}") %>
         </div>
       </div>
     <% end %>

@@ -13,4 +13,5 @@ class User < ApplicationRecord
     def odais
       return Odai.where(user_id: self.id)
     end
+
 end

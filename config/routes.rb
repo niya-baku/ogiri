@@ -23,9 +23,9 @@ Rails.application.routes.draw do
   post "odais/:id/bokes/create" => "bokes#create"
 
   get 'users' => 'user#index' #ユーザー一覧
-  get "users/:id/edit" => "users#edit"
-  post "users/create" => "users#create"
-  get "users/:id/likes" => "users#likes"
+  get "users/:id/edit" => "user#edit"
+  post "users/create" => "user#create"
+  get "users/:id/likes" => "user#likes"
 
 
   devise_for :users, path_names: { sign_in: "login", sign_out: "logout"}
