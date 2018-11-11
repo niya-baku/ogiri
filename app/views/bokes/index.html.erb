@@ -22,6 +22,7 @@
         <div class="image"><%= image_tag boke.image_url(:thumb) %></div>
         <% end %>
         <div class="content"><%= link_to(boke.content, "/bokes/#{boke.id}", id: "content-text")%></div>
+        <%= boke.odai_id %>
 
 
       </div>

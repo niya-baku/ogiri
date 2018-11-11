@@ -15,7 +15,7 @@
       <div class="post-time">
         <%= @odai.created_at %>
       </div>
-      <%= hidden_field :odai, :id %>
+      <%# <%= hidden_field :odai, :id %> %>
       <h1 class="form-heading">ボケを回答する</h1>
       <%= form_for @boke, url: "/odais/#{@odai.id}/bokes/create" do |f| %>
       <div class="form">

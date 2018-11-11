@@ -6,6 +6,7 @@ class OdaisController < ApplicationController
 
   def index
     @odais = Odai.all.order(created_at: :desc) #投稿時に降順に表示される
+    
   end
 
   def authentication
@@ -24,8 +25,6 @@ class OdaisController < ApplicationController
 
   def create
     @odai = Odai.new(odai_params)
-    test_x = params[:content]
-    puts test_x
     #@odai = Odai.new(content: params[:content])
      respond_to do |format|
        if @odai.save
