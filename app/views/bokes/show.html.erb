@@ -14,13 +14,23 @@
       <div class="post-time">
         <%= @boke.created_at %>
       </div>
-      <div class="post-menus">
 
+      <% if Like.find_by(user_id: current_user.id, boke_id: @boke.id) %>
+        <%= link_to("いいね！済み", "/likes/#{@boke.id}/destroy", {method: "post"}) %>
+        <div class="like-btn-unlike"><%= fa_icon 'star' %></div>
+      <% else %>
+      <%= link_to("いいね！","/likes/#{@boke.id}/create",{method: "post"} ) %>
+      <div class="like-btn"><%= fa_icon 'star'%></div>
+      <% end %>
+
+      <%= @likes_count %>
+
+      <% if @user.id == current_user.id %>
+      <div class="post-menus">
         <%= link_to("編集", "/bokes/#{@boke.id}/edit") %>
         <%= link_to("削除", "/bokes/#{@boke.id}/destroy",{method: "post"}) %>
-
+        <% end %>
       </div>
     </div>
   </div>
 </div>
-<%= @boke.id %>

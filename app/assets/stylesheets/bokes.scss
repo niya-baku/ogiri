@@ -4,10 +4,24 @@
 .bokes-index-item{
     background-color: #f5f8fa;
     max-width: 700px;
-    height: 750px;
+    height: 100%;
     margin: 60px auto;
     padding-left: 15px;
     padding-right: 15px;
     clear: both;
     box-shadow: 0 2px 6px #c1ced7;
+}
+
+
+.like-btn {
+  color: #8899a6;
+}
+
+.like-btn-unlike{
+  color: #ff2581;
+}
+
+.posts-show-item .fa {
+  font-size: 16px;
+  margin-right: 3px;
 }

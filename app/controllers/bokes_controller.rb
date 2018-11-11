@@ -5,14 +5,17 @@ class BokesController < ApplicationController
   def index
     @bokes = Boke.all.order(created_at: :desc) #投稿時に降順に表示される
     @odais = Odai.all.order(created_at: :desc) #投稿時に降順に表示される
-    #@boke = Boke.find_by(id: params[:odai_id])
-    @odai = Odai.find(id: @bokes.odai_id)
+    @odai = @odais.ids
+    @boke = @bokes.ids
+
+
+    #@kaito = Odai.find(id: )
   end
 
   def show
     @boke = Boke.find_by(id: params[:id])
-
-
+    @user = @boke.user
+    @likes_count = Like.where(boke_id: @boke.id).count
   end
 
   def create

@@ -2,11 +2,11 @@ class OdaisController < ApplicationController
   # ユーザがログインしていない時にアクセスできない
   before_action :authenticate_user!	, {only: [:index,:show,:new,:create,:edit,:update,:destroy]}
 
-  before_action :ensure_correct_user, {only: [:edit,:update,:destroy]}
+  #before_action :ensure_correct_user!, {only: [:edit,:update,:destroy]}
 
   def index
     @odais = Odai.all.order(created_at: :desc) #投稿時に降順に表示される
-    
+
   end
 
   def authentication
@@ -66,13 +66,13 @@ class OdaisController < ApplicationController
       redirect_to("/odais/index")
   end
 
-  def ensure_correct_user
-    @odai = Odai.find_by(id: params[:id])
-    if @odai.user_id != @current_user.id
-      flash[:notice] = "権限がありません"
-      redirect_to("/")
-    end
-  end
+  # def ensure_correct_user
+  #   @odai = Odai.find_by(id: params[:id])
+  #   if @odai.user_id != @current_user.id
+  #     flash[:notice] = "権限がありません"
+  #     redirect_to("/")
+  #   end
+  # end
 
    private
      # Use callbacks to share common setup or constraints between actions.

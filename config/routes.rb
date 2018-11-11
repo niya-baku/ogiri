@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  #いいね機能
+  post "likes/:boke_id/create" => "likes#create"
+  #いいね機能(削除)
+  post "likes/:boke_id/destroy" => "likes#destroy"
+
   #お題に対しての回答
   get "/" => "bokes#index"
   get "bokes/:id" => "bokes#show"
@@ -20,9 +25,7 @@ Rails.application.routes.draw do
   get 'users' => 'user#index' #ユーザー一覧
   get "users/:id/edit" => "users#edit"
   post "users/create" => "users#create"
-
-
-
+  get "users/:id/likes" => "users#likes"
 
 
   devise_for :users, path_names: { sign_in: "login", sign_out: "logout"}
