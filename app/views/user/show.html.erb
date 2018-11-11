@@ -7,5 +7,21 @@
       <%= link_to("アカウント編集", "/users/edit") %>
       <% end %>
     </div>
+    <% @user.odais.each do |odai|%>
+     <div class="posts-index-item">
+      <div class="post-left">
+
+      </div>
+      <div class="post-right">
+        <div class="post-user-name">
+          <%= link_to(odai.user.username, "/users/#{odai.user.id}") %>
+        </div>
+        <% if odai.image? %>
+        <div class="image"><%= image_tag odai.image_url(:thumb) %></div>
+        <% end %>
+        <%= link_to(odai.content, "/odais/#{odai.id}") %>
+      </div>
+    </div>
+    <% end %>
   </div>
 </div>
