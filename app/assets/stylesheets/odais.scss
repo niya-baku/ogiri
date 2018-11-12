@@ -51,7 +51,7 @@ body {
   width: 100%;
   height: auto;
   min-height: 100%;
-  background-color: #f0f0f0;
+  background-image: url("/retina_wood.png");
 }
 
 .container {
@@ -238,8 +238,8 @@ header {
 }
 
 .form input[type="submit"] {
-  background-color: #3ecdc6;
-  color: white;
+  background-color: #FF9933;
+  color: black;
   cursor: pointer;
   font-weight: 300;
   width: 120px;
@@ -247,6 +247,13 @@ header {
   margin-top: 8px;
   margin-bottom: 0;
   float: right;
+  border: solid 1px black;
+}
+
+.form input[type="submit"]:hover {
+  background-color: #FFCC66;
+  color: black;
+  transition: 0.5s ;
 }
 
 .form-body:after {
@@ -279,7 +286,7 @@ header {
   word-break: break-word;
   padding-top: 5px;
   padding-bottom: 10px;
-  background-color: #EEEEEE;
+  background-color: white;
   border: solid 5px #C0C0C0;
 }
 
@@ -335,7 +342,7 @@ header {
 }
 
 .btn{
-  background-color: #3ecdc6;
+  background-color: #FFFFFF;
   cursor: pointer;
   font-weight: 300;
   width: 250px;
@@ -344,12 +351,15 @@ header {
   display: block;
   //margin: 0 0 0 auto;
   text-align:center;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  border: solid 1px black;
+}
+
+.btn :hover {
+    background-color: #FFCC66;
 }
 
 #btn-text{
-  color: white;
+  color: black;
 
 }
 
