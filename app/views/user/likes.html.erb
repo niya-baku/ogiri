@@ -15,18 +15,16 @@
 
     <% @likes.each do |like| %>
       <% boke = Boke.find_by(id: like.boke_id) %>
-      <div class="posts-index-item">
-        <div class="post-left">
-
-        </div>
-        <div class="post-right">
+      <div class="like-odais-index-item">
           <div class="post-user-name">
-            <%= link_to(boke.user.username, "/users/#{boke.user.id}") %>
+            <%= link_to("#{boke.user.username}さんの回答", "/users/#{boke.user.id}") %>
           </div>
           <% if boke.image? %>
           <div class="image"><%= image_tag boke.image_url(:thumb) %></div>
           <% end %>
+          <div class="odai-content">
           <%= link_to(boke.content, "/bokes/#{boke.id}") %>
+          </div>
         </div>
       </div>
     <% end %>

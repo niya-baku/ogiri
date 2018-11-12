@@ -1,7 +1,7 @@
 
 <div class="main posts-new">
   <div class="container">
-    <h1 class="form-heading">投稿する</h1>
+
     <%= form_for @odai, url: odais_new_path do |f| %>
     <div class="form">
       <div class="form-body">
@@ -10,7 +10,7 @@
               <%= message %>
             </div>
           <% end %>
-
+              <h1>お題を投稿する</h1>
 
               <div class="field">
                 <%= f.label :image %>
@@ -18,7 +18,8 @@
                 <%= f.hidden_field :image_cache %>
               </div>
 
-              <div id="preview">
+              <div class="preview">
+                
               </div>
 
 

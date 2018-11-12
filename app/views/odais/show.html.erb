@@ -1,7 +1,7 @@
-<div class="main posts-show">
+<div class="main odai-show">
   <div class="container">
-    <div class="posts-show-item">
-      <div class="post-user-name">
+    <div class="odai-show-item">
+      <div class="odai-user-name">
         <%= link_to("#{@user.username}さんの投稿","/users/#{@user.id}")%>
       </div>
       <div class="image">
@@ -12,11 +12,10 @@
       <p>
         <%= @odai.content %>
       </p>
-      <div class="post-time">
+      <div class="odai-time">
         <%= @odai.created_at %>
       </div>
-      <%# <%= hidden_field :odai, :id %> %>
-      <h1 class="form-heading">ボケを回答する</h1>
+
       <%= form_for @boke, url: "/odais/#{@odai.id}/bokes/create" do |f| %>
       <div class="form">
         <div class="form-body">
@@ -25,6 +24,7 @@
                 <%= message %>
               </div>
             <% end %>
+              <h1>ボケを回答する</h1>
 
                 <div class="field">
                   <%= f.label :image %>
@@ -32,8 +32,10 @@
                   <%= f.hidden_field :image_cache %>
                 </div>
 
-                <div id="preview">
+                <div class="preview">
+
                 </div>
+
 
                 <div class="field">
                   <%= f.label :content %>
@@ -48,7 +50,7 @@
       </div>
       <% end %>
       <% if @user.id == current_user.id %>
-      <div class="post-menus">
+      <div class="odai-menus">
         <%= link_to("編集", "/odais/#{@odai.id}/edit") %>
         <%= link_to("削除", "/odais/#{@odai.id}/destroy",{method: "post"}) %>
       </div>

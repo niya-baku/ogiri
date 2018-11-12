@@ -62,3 +62,5 @@ gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'jquery-ui-rails'
+gem "jquery-rails"
+gem 'devise-bootstrap-views'

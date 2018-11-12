@@ -200,7 +200,7 @@ header {
 /* フォーム================================ */
 .form {
   max-width: 600px;
-  margin: 0 auto;
+  margin-top: 150px;
   background-color: white;
   box-shadow: 0 2px 6px #c1ced7;
 }
@@ -238,7 +238,7 @@ header {
 }
 
 .form input[type="submit"] {
-  background-color: #FF9933;
+  background-color: #f8b054;
   color: black;
   cursor: pointer;
   font-weight: 300;
@@ -248,12 +248,12 @@ header {
   margin-bottom: 0;
   float: right;
   border: solid 1px black;
+
 }
 
 .form input[type="submit"]:hover {
-  background-color: #FFCC66;
+  background-color: #FF8856;
   color: black;
-  transition: 0.5s ;
 }
 
 .form-body:after {
@@ -261,6 +261,15 @@ header {
   display: table;
   clear: both;
 }
+
+.preview{
+  margin: 10px auto;
+  width:  400px;
+  height: 300px;
+ display: block;
+}
+
+
 
 /* odais/index ================================ */
 .odais-index-item {
@@ -363,8 +372,45 @@ header {
 
 }
 
+/* odais/show ================================ */
+.odai-show form {
+  display: inline;
+}
 
-/* posts/show ================================ */
+.odai-show-item {
+  padding: 30px;
+  background-color: white;
+  box-shadow: 0 2px 6px #c1ced7;
+  overflow: hidden;
+}
+
+.odai-show-item .post-user-name a {
+  vertical-align: middle;
+  font-size: 24px;
+  margin-left: 15px;
+}
+
+.odai-show-item p {
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.odai-time {
+  color: #8899a6;
+  margin-bottom: 10px;
+}
+
+.odai-menus {
+  float: right;
+}
+
+.odai-menus a, .odai-menus input {
+  color: #8899a6;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+/* odais/show ================================ */
 .posts-show form {
   display: inline;
 }
