@@ -64,3 +64,4 @@ gem 'rmagick'
 gem 'jquery-ui-rails'
 gem "jquery-rails"
 gem 'devise-bootstrap-views'
+gem 'jquery-turbolinks'
