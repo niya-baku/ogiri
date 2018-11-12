@@ -21,7 +21,6 @@ ul, li {
 a {
   text-decoration: none;
   color: #2d3133;
-  font-size: 14px;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -65,7 +64,7 @@ body {
 
 /* ヘッダー ================================ */
 header {
-  height: 64px;
+  height: 80px;
   position: fixed;
   z-index: 1;
   width: 100%;
@@ -85,6 +84,13 @@ header {
   font-size: 30px;
 }
 
+.title_size{
+  float: left; /* ロゴ表示部分を左寄せで設定 */
+  width: 300px;
+  height: 80px;
+
+}
+
 .header-menus {
   float: right;
   padding-right: 20px;
@@ -92,16 +98,16 @@ header {
 
 .header-menus li {
   float: left;
-  line-height: 64px;
+  line-height: 78px;
   font-size: 13px;
   color: white;
   padding-left: 15px;
 }
 
 .header-menus a {
-  float: left;
-  font-size: 13px;
+  font-size: 16px;
   color: black;
+  margin: 10px;
 }
 
 .header-menus .fa {
@@ -141,7 +147,7 @@ header {
 #global_navi ul li a {
     display: block;
     padding: 10px 16px;
-    background-color: #AAAAAA;
+    background-color: white;
     color: black;
     text-decoration: none;
     transition: background-color .2s linear;
@@ -253,12 +259,28 @@ header {
 .odais-index-item {
   background-color: #f5f8fa;
   max-width: 700px;
-  height: 400px;
-    margin: 60px auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    clear: both;
+  height: 100%;
+  margin: 60px auto;
+  padding-left: 15px;
+  clear: both;
   box-shadow: 0 2px 6px #c1ced7;
+}
+
+.odai-content{
+  color: #000;
+  display: block;
+  font-family: "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 10px auto 10px;
+  text-align: center;
+  width: 500px;
+  word-break: break-word;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  background-color: #EEEEEE;
+  border: solid 5px #C0C0C0;
 }
 
 .post-left img {
@@ -269,11 +291,20 @@ header {
   object-fit: cover;
 }
 
-.post-user-name a {
-  font-weight: 600;
+.odai-user-name{
+  padding-top:20px;
+  padding-left:20px;
 }
 
-.post-user-name a:hover {
+.odai-user-name a {
+  font-weight: 600;
+  text-decoration: none;
+  color: #2d3133;
+  font-size: 14px;
+
+}
+
+.odai-user-name a:hover {
   color: #3ecdc6;
 }
 
@@ -294,29 +325,34 @@ header {
   padding-top: 30px;
 }
 
-#content-text{
-  font-size: 20px;
-}
 
 .content{
-  text-align:center;
+   text-align:center;
+}
+
+.btn-area{
+  padding-bottom: 10px;
 }
 
 .btn{
   background-color: #3ecdc6;
-
   cursor: pointer;
   font-weight: 300;
-  width: 120px;
+  width: 250px;
   border-radius: 2px;
-  margin-top: 8px;
-  margin-bottom: 0;
-  float: right;
+  margin: auto;
+  display: block;
+  //margin: 0 0 0 auto;
+  text-align:center;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #btn-text{
   color: white;
+
 }
+
 
 /* posts/show ================================ */
 .posts-show form {
