@@ -21,15 +21,6 @@
     <li>
       <%= link_to("#{current_user.username}の部屋", "/users/#{current_user.id}") %>
     </li>
-    <li>
-      <%= link_to("ユーザー一覧", "/users") %>
-    </li>
-    <li>
-      <%= link_to("お題投稿", "/odais/new") %>
-    </li>
-    <li>
-      <%= link_to("お題一覧", "/odais/index") %>
-    </li>
     <% end %>
     <li>
       <%= link_to("ボケ回答一覧", "/") %>
@@ -46,7 +37,24 @@
       <%= link_to("ログイン", "/users/login") %>
     </li>
     <% end %>
+
   </ul>
+  <% if user_signed_in? %>
+    <div id="global_navi">
+      <ul>
+        <li>
+          <%= link_to("お題投稿", "/odais/new") %>
+        </li>
+        <li>
+          <%= link_to("お題一覧", "/odais/index") %>
+        </li>
+        <li>
+          <%= link_to("ユーザー一覧", "/users") %>
+        </li>
+      </ul>
+    </div>
+  <% end %>
+
 </header>
 
     <% if flash[:notice] %>

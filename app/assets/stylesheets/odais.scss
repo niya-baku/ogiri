@@ -41,7 +41,7 @@ form input[type="submit"] {
 /* 共通レイアウト ================================ */
 body {
   color: #2d3133;
-  background-color: #3ecdc6;
+
   margin: 0;
   min-height: 1vh;
 }
@@ -66,9 +66,10 @@ body {
 /* ヘッダー ================================ */
 header {
   height: 64px;
-  position: absolute;
+  position: fixed;
   z-index: 1;
   width: 100%;
+  background-color: #FFCC66;
 }
 
 .header-logo {
@@ -80,8 +81,8 @@ header {
 }
 
 .header-logo a{
-  color: white;
-  font-size: 22px;
+  color: black;
+  font-size: 30px;
 }
 
 .header-menus {
@@ -100,7 +101,7 @@ header {
 .header-menus a {
   float: left;
   font-size: 13px;
-  color: white;
+  color: black;
 }
 
 .header-menus .fa {
@@ -115,6 +116,45 @@ header {
   margin: 0;
   font-size: 13px;
 }
+
+/* ログイン時に表示 ================================ */
+#global_navi {
+    width: 984px;
+    clear: both;
+    overflow: hidden;
+    margin: 16px auto;
+}
+
+#global_navi ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#global_navi ul li {
+    width: 327px;
+    float: left;
+    margin-right: 1px;
+    text-align: center;
+}
+
+#global_navi ul li a {
+    display: block;
+    padding: 10px 16px;
+    background-color: #AAAAAA;
+    color: black;
+    text-decoration: none;
+    transition: background-color .2s linear;
+}
+
+#global_navi ul li.current a {
+    background-color: #CCCCCC;
+}
+
+#global_navi ul li a:hover {
+    background-color: #CCCCCC;
+}
+
 
 /* top ================================ */
 .top-main {
